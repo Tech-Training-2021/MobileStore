@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1,
+    "Username": "samuel",
+    "Password": "samuel12",
+    "FirstName": "samuel",
+    "Lastname": "joy",
+    "Mobile": "1234567890",
+    "Location": "mumbai",
+    "Dob": "1999-12-05T00:00:00"
+  }
+]
