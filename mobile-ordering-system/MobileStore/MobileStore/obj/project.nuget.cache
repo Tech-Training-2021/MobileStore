@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "c4/0G+HIIugjusrfohWE+OICz4LjKEt6+8Z9fGC/NGSPAYHdsSx3b2eodbWJTNh5+Tz36HKr+AKTj+FOAd3NpQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\source\\mobile-ordering-system\\MobileStore\\MobileStore\\MobileStore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
