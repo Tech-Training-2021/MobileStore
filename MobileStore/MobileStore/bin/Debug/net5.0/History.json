@@ -1,0 +1,98 @@
+[
+  {
+    "P_Id": 3,
+    "C_Name": "Oppo",
+    "M_Name": "abc",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "White",
+    "Store": "Pune",
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  },
+  {
+    "P_Id": 2,
+    "C_Name": "Redmi",
+    "M_Name": "Note5",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "Pink",
+    "Store": "Mumbai",
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  },
+  {
+    "P_Id": 2,
+    "C_Name": "Redmi",
+    "M_Name": "Note5",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "Pink",
+    "Store": "Mumbai",
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  },
+  {
+    "P_Id": 3,
+    "C_Name": "Oppo",
+    "M_Name": "abc",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "White",
+    "Store": "Pune",
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  },
+  {
+    "P_Id": 1,
+    "C_Name": "Redmi",
+    "M_Name": "Note10",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "White",
+    "Store": null,
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  },
+  {
+    "P_Id": 1,
+    "C_Name": "Redmi",
+    "M_Name": "Note10",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "White",
+    "Store": null,
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  },
+  {
+    "P_Id": 2,
+    "C_Name": "Redmi",
+    "M_Name": "Note5",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "Pink",
+    "Store": "Mumbai",
+    "Price": 0,
+    "Cust": "Kajal",
+    "Buy": true
+  },
+  {
+    "P_Id": 3,
+    "C_Name": "Oppo",
+    "M_Name": "abc",
+    "Ram": 8,
+    "Storage": 128,
+    "Color": "White",
+    "Store": "Pune",
+    "Price": 0,
+    "Cust": "Raj",
+    "Buy": true
+  }
+]
