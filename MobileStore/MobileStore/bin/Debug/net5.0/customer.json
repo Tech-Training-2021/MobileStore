@@ -1,65 +1,52 @@
 [
   {
     "Id": 1,
+    "Username": "Admin",
+    "Password": "Admin",
     "FirstName": "Admin",
-    "LastName": "Admin",
+    "Lastname": "Admin",
+    "Mobile": "1234567890",
     "Location": "Mumbai",
-    "Dob": "0001-01-01T00:00:00"
+    "Dob": "1999-12-21T00:00:00"
   },
   {
     "Id": 2,
-    "FirstName": "Piyu",
-    "LastName": "Zala",
-    "Location": "Dombivali",
-    "Dob": "0001-01-01T00:00:00"
+    "Username": "kajal",
+    "Password": "Kajal",
+    "FirstName": "Kajal",
+    "Lastname": "Padhiyar",
+    "Mobile": "1234567890",
+    "Location": "Mumbai",
+    "Dob": "1999-12-21T00:00:00"
   },
   {
     "Id": 3,
-    "FirstName": "Kajal",
-    "LastName": "Padhiyar",
-    "Location": "Ghatkopar",
-    "Dob": "0001-01-01T00:00:00"
+    "Username": "samuel",
+    "Password": "Samuel",
+    "FirstName": "Samuel",
+    "Lastname": "Joy",
+    "Mobile": "1234567890",
+    "Location": "Mumbai",
+    "Dob": "2000-02-11T00:00:00"
   },
   {
     "Id": 4,
-    "FirstName": "Vidya",
-    "LastName": "Arumugam",
-    "Location": "Bhandup",
-    "Dob": "0001-01-01T00:00:00"
+    "Username": "raj",
+    "Password": "Bhosale",
+    "FirstName": "Raj",
+    "Lastname": "Bhosale",
+    "Mobile": "1234567890",
+    "Location": "Thane",
+    "Dob": "2000-02-11T00:00:00"
   },
   {
     "Id": 5,
-    "FirstName": "Riya",
-    "LastName": "Manek",
-    "Location": "Mulund",
-    "Dob": "0001-01-01T00:00:00"
-  },
-  {
-    "Id": 6,
-    "FirstName": "Pri",
-    "LastName": "Singh",
+    "Username": "lucky",
+    "Password": "Lucky123",
+    "FirstName": "Lucky",
+    "Lastname": "Lucky",
+    "Mobile": "1234567890",
     "Location": "Kurla",
-    "Dob": "0001-01-01T00:00:00"
-  },
-  {
-    "Id": 7,
-    "FirstName": "Pooja",
-    "LastName": "Mishra",
-    "Location": "Kurla",
-    "Dob": "2000-02-25T00:00:00"
-  },
-  {
-    "Id": 8,
-    "FirstName": "Nisha",
-    "LastName": "Padhiyar",
-    "Location": "Mumbai",
-    "Dob": "2000-10-11T00:00:00"
-  },
-  {
-    "Id": 9,
-    "FirstName": "Samuel",
-    "LastName": "Joy",
-    "Location": "Mumbai",
     "Dob": "2000-02-11T00:00:00"
   }
 ]

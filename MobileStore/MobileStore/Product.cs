@@ -34,8 +34,10 @@ namespace MobileStore
             public int Storage { get; set; }
             public String Color { get; set; }
             public string Store { get; set; }
+            public int Price { get; set; }
 
             public string Cust { get; set; }
+            public bool Buy { get; set; }
         }
     }
 }

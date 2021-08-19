@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace MobileStore
 {
-    class AllFun
+    public class AllFun
     {
         static List<Product.kMumbai> LProduct = JsonConvert.DeserializeObject<List<Product.kMumbai>>(File.ReadAllText(@"Product.json"));
         static List<Customer.kCustomer> LCustomer = JsonConvert.DeserializeObject<List<Customer.kCustomer>>(File.ReadAllText(@"customer.json"));
-        public static void Search_Customer()
+        static List<Product.oMumbai> LHistory = JsonConvert.DeserializeObject<List<Product.oMumbai>>(File.ReadAllText(@"History.json"));
+
+        public static bool Search_Customer(string sUsername, string sLocation)
         {
             int sflag = 0;
-            Console.Write("Enter Customer's First Name: ");
-            string sfirstName = Console.ReadLine();
-            Console.Write("Enter Customer's Last Name: ");
-            string slastName = Console.ReadLine();
-            string slocation = "", sdob = "";
+            string sUserName = sUsername;
+            string slocation = sLocation;
+            string sdob = "";
             foreach (var o in LCustomer)
             {
-                if (o.FirstName.ToString() == sfirstName && o.LastName.ToString() == slastName)
+                if (o.Username.ToString() == sUserName && o.Location.ToString() == slocation)
                 {
                     slocation = o.Location.ToString();
                     sdob = o.Dob.ToShortDateString();
@@ -32,59 +32,27 @@ namespace MobileStore
             if (sflag == 0)
             {
                 Console.WriteLine("No such customer exist");
+                return false;
             }
             else
             {
-                Console.WriteLine($"Customer's First Name : {sfirstName}\nLast Name : {slastName}\n Location : {slocation}\n Dob : {sdob}");
+                Console.WriteLine($"Customer's Username Name : {sUserName}\n Location : {slocation}\n Dob : {sdob}");
+                return true;
             }
         }
-        public static void Add_Products()
+        public static bool  Add_Products(string c_Name,string m_Name, int I, int J, string ccolor, string sstore, int K)
         {
-            Console.Write("Enter Mobile Company: ");
-            string c_name = Console.ReadLine();
-            Console.Write("Enter Mobile Name: ");
-            string m_name = Console.ReadLine();
-            Console.Write("Enter RAM: ");
-            string ram =Console.ReadLine();
-            int i;
-            bool success = int.TryParse(ram, out i);
-            if (!success)
-            {
-                Console.WriteLine("Please enter integer value");
-                Console.Write("Enter RAM: ");
-                ram = Console.ReadLine();
-                success = int.TryParse(ram, out i);
-            }
-            Console.Write("Enter ROM: ");
-            string rom = Console.ReadLine();
-            int j;
-            bool r_success = int.TryParse(rom, out j);
-            if (!r_success)
-            {
-                Console.WriteLine("Please enter integer value");
-                Console.Write("Enter ROM: ");
-                rom = Console.ReadLine();
-                r_success = int.TryParse(rom, out j);
-            }
-
-            Console.Write("Enter color: ");
-            string color = Console.ReadLine();
-            Console.Write("Enter store: ");
-            string store = Console.ReadLine();
-            Console.Write("Enter Price: ");
-            string price = Console.ReadLine();
-            int k;
-            bool p_success = int.TryParse(price, out k);
-            if (!success)
-            {
-                Console.WriteLine("Please enter integer value");
-                Console.Write("Enter Price: ");
-                price = Console.ReadLine();
-                p_success = int.TryParse(price, out k);
-            }
+            string c_name = c_Name;
+            string m_name = m_Name;
+            int i = I;
+            int j = J;
+            string color = ccolor;
+            string store = sstore;
+            int k = K;
             if (String.IsNullOrEmpty(c_name) || String.IsNullOrEmpty(m_name) || String.IsNullOrEmpty(color) || i == 0 || j == 0 || k == 0 || String.IsNullOrEmpty(store))
             {
                 Console.WriteLine("All fields are required");
+                return false;
             }
             else 
             { 
@@ -107,8 +75,91 @@ namespace MobileStore
             var jsonString = JsonConvert.SerializeObject(LProduct, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(@"Product.json", jsonString);
             Console.WriteLine("Successfully Added");
+                return true;
         }
 
+        }
+
+        public static void User(string userName, string password)
+        {
+   
+            Console.WriteLine("\n<----- Menu ----->\n");
+            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+            int choice = int.Parse(Console.ReadLine());
+            string firstname = "";
+            foreach (var o in LCustomer)
+            {
+                if (o.Username.ToString() == userName && o.Password.ToString() == password)
+                {
+                    firstname = o.FirstName.ToString();
+                }
+            }
+            while (choice != 6)
+            {
+                switch (choice)
+                {
+                    case 1:
+                        //view own details
+                        foreach (var o in LCustomer)
+                        {
+                            if (o.Username.ToString() == userName && o.Password.ToString() == password)
+                            {
+                                Console.WriteLine($"User Name : {userName}\nPassword : {password}\n Location : {o.Location.ToString()}\n Dob : {o.Dob.ToShortDateString()}");
+                            }
+                        }
+                        Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                        choice = int.Parse(Console.ReadLine());
+                        break;
+                    case 2:
+                        //iterate list to display all products
+                        foreach (var o in LProduct)
+                        {
+                            Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColors : {o.Color}\tStore Location : {o.Store}\tPrice : {o.Price}\n");
+                        }
+                        Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                        choice = int.Parse(Console.ReadLine());
+                        break;
+                    case 3:
+                        //Search Product
+                        Console.Write("Enter Mobile company name to search: ");
+                        string c_name = Console.ReadLine();
+                        Book_Order.Search_Product(c_name);
+                        Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                        choice = int.Parse(Console.ReadLine());
+                        break;
+
+                    case 4:
+                        //Book product
+                        Book_Order.Product_Book(firstname, userName, password);
+                        Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                        choice = int.Parse(Console.ReadLine());
+                        break;
+                    case 5:
+                        foreach (var o in LHistory)
+                        {
+                            if (o.Cust.ToString() == firstname)
+                            {
+                                Console.WriteLine($"Company Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColor : {o.Color}\tStore : {o.Store}\tPrice : {o.Price}\n");
+                            }
+                        }
+                        Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                        choice = int.Parse(Console.ReadLine());
+                        break;
+                    default:
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+        }
+        public static void SearchStoreHistory(string storeLocation)
+        {
+            foreach (var o in LHistory)
+            {
+                if (o.Store.ToString() == storeLocation)
+                {
+                    Console.WriteLine($"Company Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColor : {o.Color}\tPrice : {o.Price}\n");
+                }
+            }
         }
 
     }
