@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samue\\source\\repos\\MobileStore\\MobileStore.csproj": {}
+    "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\MobileStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samue\\source\\repos\\MobileStore\\MobileStore.csproj": {
+    "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\MobileStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samue\\source\\repos\\MobileStore\\MobileStore.csproj",
+        "projectUniqueName": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\MobileStore.csproj",
         "projectName": "MobileStore",
-        "projectPath": "C:\\Users\\samue\\source\\repos\\MobileStore\\MobileStore.csproj",
+        "projectPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\MobileStore.csproj",
         "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samue\\source\\repos\\MobileStore\\obj\\",
+        "outputPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
