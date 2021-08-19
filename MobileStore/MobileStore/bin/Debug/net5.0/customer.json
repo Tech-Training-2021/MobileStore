@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "UserName": "samuel",
+    "Password": "leumasyoj12",
+    "Location": "mumbai",
+    "Dob": "1999-12-05T00:00:00"
+  },
+  {
+    "Id": 2,
+    "UserName": "kajal",
+    "Password": "kajal12",
+    "Location": "mumbai",
+    "Dob": "1999-12-21T00:00:00"
+  },
+  {
+    "Id": 3,
+    "UserName": "raj",
+    "Password": "raj12",
+    "Location": "mumbai",
+    "Dob": "1999-12-21T00:00:00"
+  }
+]
