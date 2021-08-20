@@ -23,7 +23,7 @@ namespace MobileStore
             {
                 if (o.C_Name.ToString() == c_name)
                 {
-                    Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {c_name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tStore : {o.Store}\n");
+                    Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColors : {o.Color}\tStore : {o.Store}\tPrice : {o.Price}\n");
                     sflag = 1;
                 }
             }
@@ -48,20 +48,19 @@ namespace MobileStore
             List<string> mnames = new List<string>();
             for (int o = 0; o < LOrder.Count; o++)
             {
-                Console.WriteLine(LOrder.Count);
+                //Console.WriteLine(LOrder.Count);
                 if (LOrder[o].Cust.ToString() == name && !(LOrder[o].Buy))
                 {
-                    Console.WriteLine(LOrder[o].Cust.ToString() + " " + LOrder[o].Buy);
+                    //Console.WriteLine(LOrder[o].Cust.ToString() + " " + LOrder[o].Buy);
 
                     mnames.Add(LOrder[o].M_Name);
                     jsonObj[o]["Buy"] = true;
-                    Console.WriteLine(LOrder[o].Cust.ToString() + " " + LOrder[o].Buy);
+                    //Console.WriteLine(LOrder[o].Cust.ToString() + " " + LOrder[o].Buy);
 
 
                 }
             }
 
-            Console.WriteLine(ids);
 
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText("Order.json", output);
@@ -73,7 +72,7 @@ namespace MobileStore
             for (var i = jsonObj12.Count - 1; i >= 0; i--)
             {
 
-                Console.WriteLine(jsonObj12[i].P_Id + "  " + jsonObj12[i].Cust + " " + name);
+               // Console.WriteLine(jsonObj12[i].P_Id + "  " + jsonObj12[i].Cust + " " + name);
                 if (jsonObj12[i].Cust == name)
                 {
                     Product.oMumbai dproducts = new Product.oMumbai()
@@ -90,12 +89,11 @@ namespace MobileStore
                         Buy = true
                     };
 
-                    Console.WriteLine(jsonObj12[i]);
+                    //Console.WriteLine(jsonObj12[i]);
                     LHistory.Add(dproducts);
 
                     var jsonString = JsonConvert.SerializeObject(LHistory, Newtonsoft.Json.Formatting.Indented);
                     File.WriteAllText(@"History.json", jsonString);
-                    Console.WriteLine(jsonObj12[i].P_Id);
                     int tempp = int.Parse(jsonObj12[i].P_Id.ToString());
                     ids.Add(tempp);
                     jsonObj12[i].Remove();
@@ -115,18 +113,14 @@ namespace MobileStore
 
             for (var i = jsonObj123.Count - 1; i >= 0; i--)
             {
-                Console.WriteLine(i);
                 if (ids.Count > 0)
                 {
                     for (var j = ids.Count - 1; j >= 0; j--)
                     {
-                        Console.WriteLine(j);
                         if (jsonObj123[i].P_Id == ids[j])
                         {
-                            Console.WriteLine(jsonObj123[i]);
                             jsonObj123[i].Remove();
 
-                            Console.WriteLine("------");
                             var jsonfile4 = jsonObj123.ToString();
                             File.WriteAllText(@"Product.json", jsonfile4);
                         }
@@ -139,44 +133,72 @@ namespace MobileStore
         public static bool DeleteCart(string name)
         {
             //List<int> ids = new List<int>();
-            Console.WriteLine("OK");
+            //Console.WriteLine("OK");
             var list = File.ReadAllText(@"Order.json");
             dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(list);
-            Console.WriteLine(jsonObj.Count);
             for (int i = jsonObj.Count - 1; i >= 0; i--)
             {
-                Console.WriteLine("jsonObj.Count" + jsonObj.Count);
                 if (jsonObj[i].Cust == name)
                 {
-                    Console.WriteLine(jsonObj[i]);
                     jsonObj[i].Remove();
 
                 }
             }
-            int c = jsonObj.Count;
+           
+           /* foreach(var i in jsonObj)
+            {
+                
+                 if(i["Cust"] == name)
+                {
+                    c = 1;
+                    Console.WriteLine(i["Cust"]);
+                    break;
+                }
+            }*/
+           
 
-            var jsonfile2 = jsonObj.ToString();
+             var jsonfile2 = jsonObj.ToString();
             File.WriteAllText(@"Order.json", jsonfile2);
+
+            int c = 0;
+            foreach (var i in jsonObj)
+            {
+
+                if (i.Cust.ToString() == name)
+                {
+                    c = 1;
+                    Console.WriteLine("Check"+i.Cust.ToString());
+
+                    break;
+                }
+            }
+
             if (c == 0)
             {
                 return true;
             }
             else
             {
+                Console.WriteLine(c);
                 return false;
             }
 
         }
 
-        public static void ViewCart(string name)
+        public static int ViewCart(string name)
+
         {
-            foreach (var o in LOrder)
+            int count = 0;
+            List<Product.oMumbai> LOrder1 = JsonConvert.DeserializeObject<List<Product.oMumbai>>(File.ReadAllText(@"Order.json"));
+            foreach (var o in LOrder1)
             {
                 if (o.Cust.ToString() == name)
                 {
+                    count += 1;
                     Console.WriteLine($"Product ID : {o.P_Id}\t Company Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColor : {o.Color}\tPrice : {o.Price}\n");
                 }
             }
+            return count;
         }
         public static void checkout(string name, string userName, string password)
         {
@@ -192,7 +214,7 @@ namespace MobileStore
             }
             Console.WriteLine("Your Total Price is : " + Total_Price);
         cart:
-            Console.WriteLine("Press 1 if You Want To Buy All Products in Your Cart Else Press 2 to Delete Products From Your Cart Else Press 3 for Viewing Cart : ");
+            Console.WriteLine("Press 1 if You Want To Buy All Products in Your Cart \n Press 2 to Delete Products From Your Cart \n Press 3 for Viewing Cart \n Press 4 for Logout/Exit");
             int ch = int.Parse(Console.ReadLine());
 
             switch (ch)
@@ -228,9 +250,14 @@ namespace MobileStore
                 case 2:
 
                     Book_Order.DeleteCart(name);
-                    break;
+                    goto cart;
+                    
                 case 3:
                     Book_Order.ViewCart(name);
+                    goto cart;
+           
+                case 4:
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Please Enter Correct Option");
@@ -246,7 +273,7 @@ namespace MobileStore
 
             foreach (var o in LProduct)
             {
-                Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColors : {o.Color}\tStore Location : {o.Store}\tPrice : {o.Price}\n");
+                Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\t\tROM : {o.Storage}\tColors : {o.Color}\tStore Location : {o.Store}\t\tPrice : {o.Price}\n");
             }
 
             Console.WriteLine("Enter the Product Id Which You Want to Buy From Above List : ");
@@ -256,7 +283,7 @@ namespace MobileStore
                 if (o.P_Id == id)
 
                 {
-                    Console.WriteLine(o.P_Id + " " + id);
+                    //Console.WriteLine(o.P_Id + " " + id);
                     Product.oMumbai dproducts = new Product.oMumbai()
                     {
                         P_Id = id,
@@ -275,7 +302,7 @@ namespace MobileStore
                     File.WriteAllText(@"Order.json", jsonString);
                     Console.WriteLine("Successfully Added");
                     //Book_Order.ProdDelete();
-                    Console.WriteLine("Press <1> To Buy Another Product Else Press <2> to Checkout");
+                    Console.WriteLine("Press <1> To Buy Another Product \n Press <2> to Checkout");
                     int ch = int.Parse(Console.ReadLine());
                     while (ch != 3)
                     {

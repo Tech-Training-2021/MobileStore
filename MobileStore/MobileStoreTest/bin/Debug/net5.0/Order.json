@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "P_Id": 3,
+    "C_Name": "Samsung Galaxy",
+    "M_Name": "F62",
+    "Ram": 6,
+    "Storage": 128,
+    "Color": "White",
+    "Store": "Pune",
+    "Price": 20000,
+    "Cust": "Lucky",
+    "Buy": false
+  }
+]

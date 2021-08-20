@@ -19,12 +19,15 @@ namespace MobileStore
             int sflag = 0;
             string sUserName = sUsername;
             string slocation = sLocation;
-            string sdob = "";
+            string sdob = "",smob="",sfirstname="",slastname="";
             foreach (var o in LCustomer)
             {
                 if (o.Username.ToString() == sUserName && o.Location.ToString() == slocation)
                 {
                     slocation = o.Location.ToString();
+                    sfirstname = o.FirstName.ToString();
+                    slastname = o.Lastname.ToString();
+                    smob = o.Mobile.ToString();
                     sdob = o.Dob.ToShortDateString();
                     sflag = 1;
                 }
@@ -36,7 +39,7 @@ namespace MobileStore
             }
             else
             {
-                Console.WriteLine($"Customer's Username Name : {sUserName}\n Location : {slocation}\n Dob : {sdob}");
+                Console.WriteLine($"User Name : {sUsername}\tFirst Name : {sfirstname}\tLast Name : {slastname}\tMobile No : {smob}\tDob : {sdob}\n");
                 return true;
             }
         }
@@ -82,9 +85,9 @@ namespace MobileStore
 
         public static void User(string userName, string password)
         {
-   
+            login:
             Console.WriteLine("\n<----- Menu ----->\n");
-            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit\n");
             int choice = int.Parse(Console.ReadLine());
             string firstname = "";
             foreach (var o in LCustomer)
@@ -106,19 +109,19 @@ namespace MobileStore
                             {
                                 if (o.Username.ToString() == userName && o.Password.ToString() == password)
                                 {
-                                    Console.WriteLine($"User Name : {userName}\nPassword : {password}\n Location : {o.Location.ToString()}\n Dob : {o.Dob.ToShortDateString()}");
+                                    Console.WriteLine($"Id : {o.Id}\tUser Name : {o.Username.ToString()}\tFirst Name : {o.FirstName.ToString()}\tLast Name : {o.Lastname.ToString()}\tMobile No : {o.Mobile.ToString()}\tLocation : {o.Location.ToString()}\tDob : {o.Dob.ToShortDateString()}\n");
                                 }
                             }
-                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit\n");
                             choice = int.Parse(Console.ReadLine());
                             break;
                         case 2:
                             //iterate list to display all products
                             foreach (var o in LProduct)
                             {
-                                Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColors : {o.Color}\tStore Location : {o.Store}\tPrice : {o.Price}\n");
+                                Console.WriteLine($"Product Id : {o.P_Id}\tCompany Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColors : {o.Color}\tStore : {o.Store}\tPrice : {o.Price}\n");
                             }
-                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit\n");
                             choice = int.Parse(Console.ReadLine());
                             break;
                         case 3:
@@ -126,14 +129,14 @@ namespace MobileStore
                             Console.Write("Enter Mobile company name to search: ");
                             string c_name = Console.ReadLine();
                             Book_Order.Search_Product(c_name);
-                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit\n");
                             choice = int.Parse(Console.ReadLine());
                             break;
 
                         case 4:
                             //Book product
                             Book_Order.Product_Book(firstname, userName, password);
-                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit\n");
                             choice = int.Parse(Console.ReadLine());
                             break;
                         case 5:
@@ -144,7 +147,7 @@ namespace MobileStore
                                     Console.WriteLine($"Company Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColor : {o.Color}\tStore : {o.Store}\tPrice : {o.Price}\n");
                                 }
                             }
-                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit");
+                            Console.WriteLine("Click 1: View own details\nClick 2 : View All Products\nClick 3 : Search Product By Name\nClick 4 : Book an Order\nClick 5 : View Order History\nClick 6 : Exit\n");
                             choice = int.Parse(Console.ReadLine());
                             break;
                         default:
@@ -155,6 +158,7 @@ namespace MobileStore
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                goto login;
             }
         }
         public static bool SearchStoreHistory(string storeLocation)
@@ -164,7 +168,7 @@ namespace MobileStore
             {
                 if (o.Store.ToString() == storeLocation)
                 {
-                    Console.WriteLine($"Company Name : {o.C_Name}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColor : {o.Color}\tPrice : {o.Price}\n");
+                    Console.WriteLine($"Company Name : {o.C_Name}\tCustomer : {o.Cust}\tMobile Name : {o.M_Name}\tRAM : {o.Ram}\tROM : {o.Storage}\tColor : {o.Color}\tPrice : {o.Price}\n");
                     status = 1;
                 }
             }

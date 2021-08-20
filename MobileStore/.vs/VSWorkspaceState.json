@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\MobileStore",
-    "\\MobileStoreTest\\bin\\Release\\net5.0\\ref"
+    "\\MobileStoreTest"
   ],
-  "SelectedNode": "\\MobileStore\\Product.cs",
+  "SelectedNode": "\\MobileStore\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

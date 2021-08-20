@@ -7,7 +7,7 @@
     "Storage": 128,
     "Color": "Pink",
     "Store": "Mumbai",
-    "Price": 0,
+    "Price": 25000,
     "Cust": "Kajal",
     "Buy": true
   },
@@ -19,8 +19,8 @@
     "Storage": 128,
     "Color": "White",
     "Store": "Pune",
-    "Price": 0,
-    "Cust": "Samuel",
+    "Price": 15000,
+    "Cust": "Kajal",
     "Buy": true
   },
   {
@@ -31,31 +31,7 @@
     "Storage": 128,
     "Color": "Black",
     "Store": "Thane",
-    "Price": 0,
-    "Cust": "Kajal",
-    "Buy": true
-  },
-  {
-    "P_Id": 131,
-    "C_Name": "Redmi",
-    "M_Name": "Note5",
-    "Ram": 8,
-    "Storage": 128,
-    "Color": "Pink",
-    "Store": "Mumbai",
-    "Price": 0,
-    "Cust": "Kajal",
-    "Buy": true
-  },
-  {
-    "P_Id": 134,
-    "C_Name": "Oppo",
-    "M_Name": "Note10",
-    "Ram": 8,
-    "Storage": 128,
-    "Color": "Black",
-    "Store": "Pune",
-    "Price": 0,
+    "Price": 18000,
     "Cust": "Kajal",
     "Buy": true
   },
@@ -67,7 +43,7 @@
     "Storage": 128,
     "Color": "Pink",
     "Store": "Mumbai",
-    "Price": 0,
+    "Price": 12000,
     "Cust": "Lucky",
     "Buy": true
   },
@@ -79,8 +55,8 @@
     "Storage": 128,
     "Color": "White",
     "Store": "Pune",
-    "Price": 0,
-    "Cust": "Samuel",
+    "Price": 15000,
+    "Cust": "Lucky",
     "Buy": true
   },
   {
@@ -91,8 +67,8 @@
     "Storage": 128,
     "Color": "Black",
     "Store": "Pune",
-    "Price": 0,
-    "Cust": "Raj",
+    "Price": 23000,
+    "Cust": "Rajjj",
     "Buy": true
   },
   {
@@ -103,68 +79,32 @@
     "Storage": 128,
     "Color": "Pink",
     "Store": "Pune",
-    "Price": 0,
-    "Cust": "Raj",
+    "Price": 27000,
+    "Cust": "Rajjj",
     "Buy": true
   },
   {
-    "P_Id": 4,
+    "P_Id": 154,
     "C_Name": "Samsung",
     "M_Name": "j5",
     "Ram": 8,
     "Storage": 128,
     "Color": "Black",
     "Store": "Thane",
-    "Price": 0,
+    "Price": 12000,
     "Cust": "Samuel",
     "Buy": true
   },
   {
-    "P_Id": 1,
+    "P_Id": 151,
     "C_Name": "Redmi",
     "M_Name": "Note10",
     "Ram": 8,
     "Storage": 128,
     "Color": "Black",
     "Store": "Mumbai",
-    "Price": 0,
+    "Price": 32000,
     "Cust": "Samuel",
-    "Buy": true
-  },
-  {
-    "P_Id": 4,
-    "C_Name": "Samsung",
-    "M_Name": "Note5",
-    "Ram": 6,
-    "Storage": 32,
-    "Color": "Pink",
-    "Store": "Mumbai",
-    "Price": 12000,
-    "Cust": "Kajal",
-    "Buy": true
-  },
-  {
-    "P_Id": 3,
-    "C_Name": "Redmi",
-    "M_Name": "Note5",
-    "Ram": 6,
-    "Storage": 32,
-    "Color": "Pink",
-    "Store": "Mumbai",
-    "Price": 12000,
-    "Cust": "Kajal",
-    "Buy": true
-  },
-  {
-    "P_Id": 2,
-    "C_Name": "Oppo",
-    "M_Name": "Note12",
-    "Ram": 6,
-    "Storage": 64,
-    "Color": "White",
-    "Store": "Pune",
-    "Price": 15000,
-    "Cust": "Kajal",
     "Buy": true
   }
 ]
