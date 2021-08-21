@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "a3EbxoA6ZG13tGLTxvy3QvSkGL8vAqFcZtpVhAUi2xQc27FgKy05u5uTnPczuNDTCSokIHMexNZByjZwrGsCuA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileLib\\MobileLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\samue\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

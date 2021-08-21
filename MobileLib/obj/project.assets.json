@@ -10,19 +10,6 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "MobileLib/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/MobileLib.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MobileLib.dll": {}
-        }
       }
     }
   },
@@ -53,16 +40,10 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
-    },
-    "MobileLib/1.0.0": {
-      "type": "project",
-      "path": "../MobileLib/MobileLib.csproj",
-      "msbuildProject": "../MobileLib/MobileLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "MobileLib >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -72,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\MobileStore.csproj",
-      "projectName": "MobileStore",
-      "projectPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\MobileStore.csproj",
+      "projectUniqueName": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileLib\\MobileLib.csproj",
+      "projectName": "MobileLib",
+      "projectPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileLib\\MobileLib.csproj",
       "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileStore\\obj\\",
+      "outputPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -92,11 +73,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileLib\\MobileLib.csproj": {
-              "projectPath": "C:\\Users\\samue\\Downloads\\MobileStore - Samuel Joy\\MobileLib\\MobileLib.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

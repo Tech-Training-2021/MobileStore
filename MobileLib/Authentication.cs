@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobileStore
+namespace MobileLib
 {
     public static class Authentication
     {
@@ -39,7 +39,7 @@ namespace MobileStore
         {
             Console.WriteLine("\nEnter UserName:");
             string username = Console.ReadLine().ToLower();
-            
+
             try
             {
                 foreach (var o in LCustomer)
@@ -53,7 +53,7 @@ namespace MobileStore
                 }
                 customerData.Username = username;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 AuthenticateUsername();
@@ -85,7 +85,7 @@ namespace MobileStore
                 }
                 customerData.Password = password;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 AuthenticatePassword();
@@ -112,11 +112,11 @@ namespace MobileStore
                 }
                 customerData.Mobile = number;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 AuthenticateMobile();
-            }       
+            }
         }
 
         //Date of Birth
@@ -160,7 +160,7 @@ namespace MobileStore
             File.WriteAllText(@"customer.json", jsonstring);
             Console.WriteLine("Successfully created account...Please do the login\n");
         }
-        
+
     }
 
 }

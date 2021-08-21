@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobileStore
+namespace MobileLib
 {
     public class AuthenticationException : Exception
     {
         public AuthenticationException(string name)
-            : base(string.Format("{0}: Same username already exists",name))
+            : base(string.Format("{0}: Same username already exists", name))
         {
         }
 
-        public AuthenticationException(string name,int len)
-            : base(string.Format("{0} length is {1}: Username must be greater than 3 or less than 10", name,len))
+        public AuthenticationException(string name, int len)
+            : base(string.Format("{0} length is {1}: Username must be greater than 3 or less than 10", name, len))
         {
         }
         public AuthenticationException(int len)
@@ -24,7 +24,7 @@ namespace MobileStore
 
     }
 
-    public class MobileException:Exception
+    public class MobileException : Exception
     {
         public MobileException(string name)
             : base(string.Format("{0}: Same username already exists", name))
